@@ -78,6 +78,24 @@ The service's October 19, 2026 release acceptance recorded OAuth/PKCE and refres
 
 ## Development
 
+For ChatGPT/Codex public directory review, this repository also contains a
+plugin manifest ([plugin.json](plugin.json)), OAuth MCP configuration
+([mcp.json](mcp.json)), the existing project icon and the bundled Skill. Build
+the allowlisted upload ZIP with Python 3.9+:
+
+```sh
+python3 scripts/build-plugin.py
+```
+
+The output is `dist/freevideogenerator-plugin-0.1.0.zip`. It includes five
+positive and three negative review cases. Upload it through
+[OpenAI Plugins](https://platform.openai.com/plugins). A verified publisher,
+domain verification, OAuth connection/tool scans, private reviewer access and a
+real walkthrough recording must be completed before submission. The package is
+prepared; no OpenAI review draft has been created or submitted yet. The current
+[submission record](docs/submissions/review-draft.json) tracks remaining work.
+See the [official submission guide](https://developers.openai.com/plugins/deploy/submission).
+
 ```sh
 npm run check
 npm test

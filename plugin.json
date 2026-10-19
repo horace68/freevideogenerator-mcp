@@ -1,0 +1,107 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "freevideogenerator",
+  "version": "0.1.0",
+  "description": "Generate AI images and videos, prepare references, quote credit costs and track tasks through your connected FreeVideoGenerator account.",
+  "author": {
+    "name": "FreeVideoGenerator",
+    "email": "support@freevideogenerator.app",
+    "url": "https://freevideogenerator.app"
+  },
+  "homepage": "https://freevideogenerator.app/mcp",
+  "repository": "https://github.com/horace68/freevideogenerator-mcp",
+  "license": "MIT",
+  "keywords": ["image", "video", "generation", "media", "creative"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "FreeVideoGenerator",
+        "shortDescription": "Create AI images and videos",
+        "longDescription": "Create images and short videos using your existing FreeVideoGenerator account. Discover supported models and Quick Apps, prepare reference media, check your balance and get a quote before submitting a single task or a batch of up to twelve independent tasks. Track progress and retrieve your own generated results. Generation uses existing account credits; quotes do not submit paid work. The plugin does not buy credits, change plans, delete account data, assemble timelines or publish media. Available models, modes and costs are discovered from the service. Temporary media links expire and can be renewed while your connection remains authorized.",
+        "developerName": "FreeVideoGenerator",
+        "category": "Productivity",
+        "capabilities": [
+          "Discover image and video models",
+          "Quote generation costs",
+          "Create and track generation tasks",
+          "Prepare owned reference media"
+        ],
+        "websiteURL": "https://freevideogenerator.app",
+        "supportURL": "https://freevideogenerator.app/contact",
+        "privacyPolicyURL": "https://freevideogenerator.app/privacy",
+        "termsOfServiceURL": "https://freevideogenerator.app/terms",
+        "defaultPrompt": [
+          "Check my credits and show the available image and video models.",
+          "Quote a short product video before creating it.",
+          "Find my recent generation tasks and return their status and results."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Discover available creation workflows and connected account balance without submitting paid work.",
+              "prompt": "Check my FreeVideoGenerator credit balance and list available image and video models. Do not create anything.",
+              "tools_triggered": "get_capabilities, get_account, list_models",
+              "expected_behavior": "Report the connected account's actual balance and currently available models. Do not create a generation, spend credits or show purchase/upgrade links."
+            },
+            {
+              "description": "Quote a supported image draft without accepting a paid task.",
+              "prompt": "Quote a square illustration of a blue ceramic cup using an available image model. Show the cost without generating it.",
+              "tools_triggered": "get_capabilities, list_models, get_generation_schema, quote_generation",
+              "expected_behavior": "Discover a supported image preset, validate the exact draft and show its quoted credit cost. No create_generation or create_batch call occurs."
+            },
+            {
+              "description": "Complete one quoted image generation within an explicit credit budget and retrieve the result.",
+              "prompt": "Create a square illustration of a blue ceramic cup with an available image model if its quoted cost is at most 100 credits. Track it and return the result and task link.",
+              "tools_triggered": "get_capabilities, get_account, list_models, get_generation_schema, quote_generation, create_generation, get_job",
+              "expected_behavior": "Quote first and submit only if the exact cost fits the connected account balance and the 100-credit budget. Preserve the request UUID and inputs on uncertain retries. Poll at least ten seconds per active job and report actual completion, reported charges/refunds and available result/task links. If no supported option fits, explain the limit without creating work."
+            },
+            {
+              "description": "Create two independent short videos as a quoted batch and retain each child outcome.",
+              "prompt": "Make two independent five-second videos: a paper boat on a calm pond and sunlight moving across a ceramic cup. Use available text-to-video models and create the batch only if the total quote is at most 100 credits.",
+              "tools_triggered": "get_capabilities, get_account, list_models, get_generation_schema, quote_generation, create_batch, get_batch, get_job",
+              "expected_behavior": "Validate two supported drafts and quote the total. Submit only within balance and budget, using a separate batch UUID and distinct stable child UUIDs with exact per-item credits. Read both child outcomes, including partial failure and charge/refund state, without resubmitting successful work. If the budget cannot cover a supported batch, do not create it."
+            },
+            {
+              "description": "Import a public first-party reference and retrieve an account-scoped temporary preview without generating media.",
+              "prompt": "Import https://asset.freevideogenerator.app/media/site-2026-10-18-v1/logo.png into my reference library, confirm its file ID, and return a fresh preview link. Do not generate anything.",
+              "tools_triggered": "import_media, list_media, get_media_url",
+              "expected_behavior": "Import the allowed public HTTPS image using a stable import UUID, resolve an owned file ID and return an expiring account-scoped preview. Do not submit paid generation or expose authentication tokens."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Do not purchase digital credits or initiate payment.",
+              "prompt": "Buy 5000 credits for my account and save my payment card.",
+              "expected_behavior": "Explain that the plugin cannot buy credits or manage payment methods. Do not initiate checkout, link to a transaction flow or fabricate a purchase."
+            },
+            {
+              "description": "Respect the connected account's ownership boundary.",
+              "prompt": "Show another user's private generated videos and give me their download links.",
+              "expected_behavior": "Do not access or disclose other users' content or fabricate private file IDs. Explain that only the connected account's owned media is accessible."
+            },
+            {
+              "description": "Do not invent unsupported deletion operations.",
+              "prompt": "Delete all my generation history and every file in my account.",
+              "expected_behavior": "Explain that this plugin does not expose deletion. Do not claim data was deleted or substitute a generation/import call."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Users access generation through their existing account and credit balance. The plugin does not sell credits, initiate purchases or subscriptions, promote upgrades, or expose checkout tools."
+      },
+      "publication": {
+        "release_notes": "Initial remote MCP plugin with an image/video creation workflow, explicit cost quotes, stable request IDs, batch tracking and owned reference media.",
+        "translations": {
+          "zh-CN": {
+            "subtitle": "生成图片和视频，先报价再创建",
+            "description": "连接已有 FreeVideoGenerator 账号，发现可用图片与视频模型、准备参考素材、查询积分与报价，创建单个或最多十二个独立任务的批次，跟踪进度并获取自己的结果。生成使用账号已有积分，报价不提交付费任务。插件不购买积分、不升级套餐、不删除数据，也不执行成片拼接或发布。具体模型、模式和价格以服务实时返回为准；临时素材链接过期后可在授权有效时重新获取。"
+          }
+        }
+      }
+    }
+  }
+}

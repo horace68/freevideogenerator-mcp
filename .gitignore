@@ -6,3 +6,5 @@ node_modules/
 coverage/
 .mcp_publisher_token
 .mcpregistry_*
+dist/
+.review-private/

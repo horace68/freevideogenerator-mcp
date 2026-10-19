@@ -78,6 +78,21 @@ OAuth 在授权范围内访问所连接账号的数据，范围不是逐个项�
 
 ## 开发
 
+本仓库另外包含用于 ChatGPT/Codex 公开插件目录审核的
+[plugin.json](plugin.json)、[OAuth MCP 配置](mcp.json)、项目现有图标与 Skill。
+使用 Python 3.9+ 构建仅包含公开发布文件的 ZIP：
+
+```sh
+python3 scripts/build-plugin.py
+```
+
+输出为 `dist/freevideogenerator-plugin-0.1.0.zip`，已包含 5 个正向、3 个反向
+审核用例。通过 [OpenAI Plugins](https://platform.openai.com/plugins) 上传。
+提交前仍需完成发布身份验证、域名验证、OAuth 连接和工具扫描、私有审核账号及
+实际演示录像。当前已准备插件包，尚未在 OpenAI 后台创建或提交审核草稿。
+[提交记录](docs/submissions/review-draft.json)跟踪剩余事项；流程以
+[官方提交指南](https://developers.openai.com/plugins/deploy/submission)为准。
+
 ```sh
 npm run check
 npm test

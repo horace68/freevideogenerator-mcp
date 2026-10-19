@@ -1,0 +1,297 @@
+{
+  "status": "prepared_awaiting_openai_platform_login",
+  "sourceArticle": {
+    "url": "https://mp.weixin.qq.com/s/UkPeTrkVgOGEeZv8TSWFjA",
+    "access": "Read the user-provided Markdown capture and its embedded screenshot."
+  },
+  "submission": {
+    "platform": "OpenAI universal plugin directory for ChatGPT and Codex",
+    "formUrl": "https://platform.openai.com/plugins",
+    "submittedAt": null,
+    "confirmationId": null
+  },
+  "service": {
+    "name": "FreeVideoGenerator",
+    "registryName": "io.github.horace68/freevideogenerator",
+    "version": "1.0.1",
+    "endpoint": "https://freevideogenerator.app/api/mcp",
+    "transport": "Streamable HTTP",
+    "websiteUrl": "https://freevideogenerator.app/mcp",
+    "repositoryUrl": "https://github.com/horace68/freevideogenerator-mcp",
+    "privacyPolicyUrl": "https://freevideogenerator.app/privacy",
+    "termsOfServiceUrl": "https://freevideogenerator.app/terms",
+    "supportUrl": "https://freevideogenerator.app/contact",
+    "publicSupportEmail": "support@freevideogenerator.app",
+    "issueTrackerUrl": "https://github.com/horace68/freevideogenerator-mcp/issues",
+    "descriptionEn": "Generate AI images and videos, quote credit costs, manage media and track batch jobs with OAuth.",
+    "descriptionZh": "通过 OAuth 连接已有账号，发现图片与视频模型、查询积分与报价、上传参考素材、创建单个或批量生成任务并获取结果。"
+  },
+  "authentication": {
+    "default": "OAuth authorization code with PKCE S256",
+    "resourceMetadataUrl": "https://freevideogenerator.app/.well-known/oauth-protected-resource/api/mcp",
+    "authorizationMetadataUrl": "https://freevideogenerator.app/.well-known/oauth-authorization-server/api/auth",
+    "issuer": "https://freevideogenerator.app/api/auth",
+    "clientRegistration": [
+      "CIMD",
+      "Dynamic client registration"
+    ],
+    "scopes": [
+      "account:read",
+      "generations:read",
+      "generations:write",
+      "media:read",
+      "media:write",
+      "offline_access"
+    ],
+    "additionalReferenceScope": "Reference-based quotes and generation also require media:read.",
+    "developerKeys": "Optional developer key with MCP permissions through Authorization: Bearer or X-Api-Key; no credential is included in this packet.",
+    "revocationUrl": "https://freevideogenerator.app/settings/connections",
+    "keyManagementUrl": "https://freevideogenerator.app/settings/apikeys"
+  },
+  "tools": [
+    {
+      "name": "get_capabilities",
+      "requiredScopes": [],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "list_models",
+      "requiredScopes": [],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "get_generation_schema",
+      "requiredScopes": [],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "get_account",
+      "requiredScopes": [
+        "account:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "quote_generation",
+      "requiredScopes": [
+        "generations:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "create_generation",
+      "requiredScopes": [
+        "generations:write"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": true
+    },
+    {
+      "name": "create_batch",
+      "requiredScopes": [
+        "generations:write"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": true
+    },
+    {
+      "name": "get_job",
+      "requiredScopes": [
+        "generations:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "get_batch",
+      "requiredScopes": [
+        "generations:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "list_jobs",
+      "requiredScopes": [
+        "generations:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "list_media",
+      "requiredScopes": [
+        "media:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "get_media_url",
+      "requiredScopes": [
+        "media:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "create_upload",
+      "requiredScopes": [
+        "media:write"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "get_upload",
+      "requiredScopes": [
+        "media:write"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "import_media",
+      "requiredScopes": [
+        "media:write"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "create_creator_assist",
+      "requiredScopes": [
+        "generations:write"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    },
+    {
+      "name": "get_creator_assist",
+      "requiredScopes": [
+        "generations:read"
+      ],
+      "requiresAuthentication": true,
+      "spendsGenerationCredits": false
+    }
+  ],
+  "reviewWorkflows": [
+    {
+      "name": "Read-only discovery and quote",
+      "steps": [
+        "Connect with OAuth and the intended scopes.",
+        "Call get_capabilities, list_models, get_generation_schema and get_account.",
+        "Quote an exact supported generation draft with quote_generation; no paid generation is submitted."
+      ]
+    },
+    {
+      "name": "Paid generation within an authorized budget",
+      "steps": [
+        "Quote the exact input and check balance/budget.",
+        "Use a stable fresh UUID, expectedCredits from the quote, and the exact quoted generation.",
+        "Create one generation or a batch of 1–12 independent children with distinct child UUIDs.",
+        "Poll at least ten seconds per active job and preserve UUIDs on uncertain retries.",
+        "Read actual completion, charge/refund state, task link and expiring result URL."
+      ]
+    },
+    {
+      "name": "Reference upload",
+      "steps": [
+        "Create an upload capability, transfer a supported file as multipart field file or use the browser page signed into the same account.",
+        "Resolve get_upload to an owned fileId before quoting reference-based work."
+      ]
+    }
+  ],
+  "limitsAndData": {
+    "batchMaximum": 12,
+    "uploadMaximumBytes": 10485760,
+    "uploadFormats": [
+      "JPEG",
+      "PNG",
+      "WebP",
+      "MP4",
+      "WAV",
+      "MP3"
+    ],
+    "mediaCapabilityLifetimeSeconds": 600,
+    "privateMedia": "Owned media stays account-scoped; capabilities depend on the live grant/key.",
+    "quota": "Creator-assist suggestions use the existing daily quota.",
+    "generationBilling": "Creation uses existing account credits; quote first. Tasks charge/refund independently, including in a partially failed batch.",
+    "availableActions": "Image/video creation, configured Quick Apps, shot suggestions, task tracking, owned media upload/import/download.",
+    "unavailableActions": [
+      "Purchasing credits or upgrading plans",
+      "Deleting account data through MCP",
+      "Audio-only generation",
+      "Automatic timeline editing or assembly",
+      "Publishing generated media"
+    ]
+  },
+  "evidence": {
+    "sourceCommit": "61059517f3769b8650ff53bfe678eb355811b81e",
+    "officialRegistryUrl": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.horace68%2Ffreevideogenerator/versions/1.0.1",
+    "officialRegistryReadback": {
+      "status": "active",
+      "statusChangedAt": "2026-10-19T05:59:23.034475Z",
+      "publishedAt": "2026-10-19T05:59:23.034475Z",
+      "updatedAt": "2026-10-19T05:59:23.034475Z",
+      "isLatest": true
+    },
+    "unitTests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "ci": {
+      "url": "https://github.com/horace68/freevideogenerator-mcp/actions/runs/39207285146",
+      "passedJobs": 9,
+      "failedJobs": 0,
+      "platforms": [
+        "Linux",
+        "macOS",
+        "Windows"
+      ],
+      "nodeVersions": [
+        20,
+        22,
+        24
+      ]
+    },
+    "individualClientAcceptance": "Not completed for each client; the protocol-level hosted-service acceptance is described separately in docs/clients.md.",
+    "submissionState": "No review form has been submitted. Destination and article-specific requirements are pending."
+  },
+  "missingInformation": [
+    "Complete sign-in to the OpenAI Platform in the retained browser tab.",
+    "Select the verified publisher identity and owning organization/project in the portal.",
+    "Complete the portal domain challenge, OAuth connection and automated scans.",
+    "Provide a dedicated reviewer account through the private review form and a real walkthrough recording URL.",
+    "Complete the final submission attestations when the full draft is reviewable."
+  ],
+  "pluginPackage": {
+    "path": "dist/freevideogenerator-plugin-0.1.0.zip",
+    "sha256": "22862ef311464c39bb7f31b86e388b07e692e9eb5f26678f9e21e81570198e38",
+    "bytes": 12382,
+    "files": [
+      "LICENSE",
+      "assets/icon.png",
+      "mcp.json",
+      "plugin.json",
+      "skills/freevideogenerator/SKILL.md",
+      "skills/freevideogenerator/agents/openai.yaml",
+      "skills/freevideogenerator/references/media-and-recovery.md"
+    ],
+    "reviewCases": {
+      "positive": 5,
+      "negative": 3
+    },
+    "validation": "Local structure, paths, public file allowlist, metadata lengths and review-case counts passed. OpenAI portal validation has not run."
+  },
+  "officialGuides": [
+    "https://developers.openai.com/plugins/deploy/submission",
+    "https://developers.openai.com/plugins/build/plugins",
+    "https://developers.openai.com/plugins/plugin-guidelines"
+  ]
+}
