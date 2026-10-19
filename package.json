@@ -1,0 +1,41 @@
+{
+  "name": "freevideogenerator-mcp-connect",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Connection helpers and an agent skill for the hosted FreeVideoGenerator MCP service",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "freevideogenerator-mcp": "bin/freevideogenerator.mjs"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "skills/",
+    "examples/",
+    "docs/",
+    "server.json",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/freevideogenerator.mjs && node --check lib/connect.mjs",
+    "doctor": "node bin/freevideogenerator.mjs doctor",
+    "registry:validate": "mcp-publisher validate server.json",
+    "registry:publish": "mcp-publisher publish server.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horace68/freevideogenerator-mcp.git"
+  },
+  "homepage": "https://freevideogenerator.app/mcp",
+  "bugs": {
+    "url": "https://github.com/horace68/freevideogenerator-mcp/issues"
+  }
+}

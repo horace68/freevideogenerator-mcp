@@ -1,0 +1,10 @@
+{
+  "mcp": {
+    "servers": {
+      "freevideogenerator": {
+        "type": "http",
+        "url": "https://freevideogenerator.app/api/mcp"
+      }
+    }
+  }
+}

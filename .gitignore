@@ -1,0 +1,8 @@
+node_modules/
+*.tgz
+.env
+.env.*
+.DS_Store
+coverage/
+.mcp_publisher_token
+.mcpregistry_*

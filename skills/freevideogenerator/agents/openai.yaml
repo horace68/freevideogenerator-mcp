@@ -1,0 +1,11 @@
+interface:
+  display_name: "FreeVideoGenerator"
+  short_description: "Generate images and videos with quotes and task tracking"
+  default_prompt: "Use $freevideogenerator to discover available models, quote my image or video within my budget, generate it with stable request IDs, and return the task status and result."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "freevideogenerator"
+      description: "Authorized FreeVideoGenerator image, video and media workflows"
+      transport: "streamable_http"
+      url: "https://freevideogenerator.app/api/mcp"

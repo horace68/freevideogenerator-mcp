@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "freevideogenerator": {
+      "httpUrl": "https://freevideogenerator.app/api/mcp",
+      "oauth": {
+        "enabled": true
+      }
+    }
+  }
+}
