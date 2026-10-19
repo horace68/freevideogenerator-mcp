@@ -74,7 +74,7 @@ OAuth 在授权范围内访问所连接账号的数据，范围不是逐个项�
 
 服务在 2026-10-19 的发布验收中记录了 OAuth/PKCE 与刷新、17 个工具、API key、实际图片/视频完成、批量重试计费、上传/导入和范围下载。本仓库的公开检查单独验证发现配置与认证挑战；尚未在这里逐个完成客户端 OAuth 和生成全流程。[验证状态](docs/clients.md#verification-status)。
 
-[server.json](server.json) 为[官方 MCP Registry](https://registry.modelcontextprotocol.io/?q=freevideogenerator)描述远程服务 `io.github.horace68/freevideogenerator`，版本 `1.0.1`。Registry 记录用于发现现有服务，不会把助手发布到 npm，也不会自动安装 Skill。[发布与回读](docs/publishing.md)。
+[server.json](server.json) 描述的远程服务 `io.github.horace68/freevideogenerator`（`1.0.1`）已于 2026-10-19 发布到[官方 MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.horace68%2Ffreevideogenerator/versions/1.0.1)。公开回读确认状态为 active、最新版本，端点元数据一致。Registry 记录用于发现现有服务，不会把助手发布到 npm，也不会自动安装 Skill。[发布与凭证](docs/publishing.md)。
 
 ## 开发
 

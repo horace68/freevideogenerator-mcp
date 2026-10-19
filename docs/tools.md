@@ -24,7 +24,7 @@ The authenticated server's tool schemas and capability responses are authoritati
 | `create_creator_assist` | Create three editable shot suggestions within daily quota | `generations:write` |
 | `get_creator_assist` | Read a shot-suggestion request by `requestId` | `generations:read` |
 
-Reference-based quoting/creation also needs `media:read`. Shot suggestions use the existing quota and do not create paid image/video jobs. Account ownership is enforced by the service; there is no project/asset selection grant like a screenshot design editor.
+Reference-based quoting/creation also needs `media:read`. Shot suggestions use the existing quota and do not create paid image/video jobs. Scopes grant access to the connected account's own tasks and media; ownership is enforced by the service.
 
 ## Quote, create and retrieve
 

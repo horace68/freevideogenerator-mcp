@@ -9,6 +9,8 @@
 
 It contains only a `remotes` entry. The local connection helper is not a stdio server or npm distribution, so no `packages` entry or npm publication is required. OAuth is discovered by clients from the hosted HTTP challenge; the descriptor does not require a static Authorization header or contain credentials. See the [official remote-server guide](https://modelcontextprotocol.io/registry/remote-servers).
 
+First publication completed on October 19, 2026. The public exact-version lookup returned HTTP 200 with active/latest status and matching name, version, repository and remote endpoint. The implementation's [nine CI jobs](https://github.com/horace68/freevideogenerator-mcp/actions/runs/39207285146) passed across Linux/macOS/Windows and Node.js 20/22/24. [Public release receipt](releases/registry-1.0.1.json).
+
 ## Validate and publish
 
 Install the official [`mcp-publisher`](https://github.com/modelcontextprotocol/registry) CLI. On macOS, `brew install mcp-publisher` is supported. For a downloaded binary, verify it against the official release checksums. Version `v1.8.1` was used for this repository's first validation.
@@ -37,9 +39,11 @@ GitHub authorization must cover `io.github.horace68/*`. Keep publisher tokens in
 Retrieve the exact version after publishing:
 
 ```sh
-curl --fail --silent --show-error 'https://registry.modelcontextprotocol.io/v0.1/servers/io.github.horace68%2Ffreevideogenerator/versions/1.0.1'
+curl --fail --silent --show-error --max-time 60 'https://registry.modelcontextprotocol.io/v0.1/servers/io.github.horace68%2Ffreevideogenerator/versions/1.0.1'
 ```
 
 Check the returned name, version, repository, remote URL, active status and latest-version metadata. A successful CLI exit alone is insufficient. The record is also discoverable through the [Registry search API](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.horace68%2Ffreevideogenerator).
+
+The first successful version lookup took about 39 seconds; earlier shorter requests timed out. If a readback times out after publication, retry the read rather than publishing the same version again.
 
 For updates, read the current record first and use a new descriptor version for changed published metadata. Do not blindly retry an existing name/version or claim that Registry publication certifies client compatibility. Registry records are metadata; authenticated service use, optional Skill installation and other client directories have separate lifecycles. [Official publishing quickstart](https://modelcontextprotocol.io/registry/quickstart).

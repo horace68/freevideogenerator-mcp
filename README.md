@@ -74,7 +74,7 @@ OAuth authorization is account-wide for the granted scopes. Review connections a
 
 The service's October 19, 2026 release acceptance recorded OAuth/PKCE and refresh, all 17 tools, API keys, real image/video completion, batch retry billing, uploads/imports and ranged downloads. This repository's public checks verify discovery and the authentication challenge separately; individual client OAuth and generation journeys remain unverified here. See [verification status](docs/clients.md#verification-status).
 
-[server.json](server.json) describes `io.github.horace68/freevideogenerator` version `1.0.1` for the [official MCP Registry](https://registry.modelcontextprotocol.io/?q=freevideogenerator). Registry metadata points to the hosted endpoint; it does not publish the helper to npm or install the Skill. [Publishing and readback](docs/publishing.md).
+[server.json](server.json) describes `io.github.horace68/freevideogenerator` version `1.0.1`, published to the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.horace68%2Ffreevideogenerator/versions/1.0.1) on October 19, 2026. Public readback confirmed active/latest status and matching endpoint metadata. Registry metadata points to the hosted service; it does not publish the helper to npm or install the Skill. [Publishing and evidence](docs/publishing.md).
 
 ## Development
 

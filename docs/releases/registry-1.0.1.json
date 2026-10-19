@@ -1,0 +1,65 @@
+{
+  "verifiedAt": "2026-10-19T06:02:35.672566+00:00",
+  "registry": "https://registry.modelcontextprotocol.io",
+  "lookupUrl": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.horace68%2Ffreevideogenerator/versions/1.0.1",
+  "sourceCommit": "0b4a15b249b797d5ed72b06a5cd11a94d3297bda",
+  "publisherVersion": "1.8.1",
+  "checks": {
+    "syntax": "passed",
+    "unitTests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "skillValidation": "passed",
+    "packageDryRun": "passed for the implementation commit; 21 public files",
+    "toolReference": "matched all 17 current service tool registrations",
+    "publicMcpDiagnostic": "passed with the system HTTP proxy supplied to Node; resource metadata, authorization metadata/PKCE S256, HTTP 401 challenge",
+    "ci": {
+      "url": "https://github.com/horace68/freevideogenerator-mcp/actions/runs/39207285146",
+      "passedJobs": 9,
+      "failedJobs": 0,
+      "platforms": [
+        "Linux",
+        "macOS",
+        "Windows"
+      ],
+      "nodeVersions": [
+        20,
+        22,
+        24
+      ]
+    },
+    "registryReadback": "HTTP 200; descriptor fields match; active; latest. The first successful version lookup took 38.6 seconds after shorter requests timed out.",
+    "individualClientAcceptance": "not run; see docs/clients.md",
+    "paidGeneration": "not run by this repository release"
+  },
+  "registryRecord": {
+    "server": {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.horace68/freevideogenerator",
+      "description": "Generate AI images and videos, quote credit costs, manage media and track batch jobs with OAuth.",
+      "title": "FreeVideoGenerator",
+      "repository": {
+        "url": "https://github.com/horace68/freevideogenerator-mcp",
+        "source": "github"
+      },
+      "version": "1.0.1",
+      "websiteUrl": "https://freevideogenerator.app/mcp",
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://freevideogenerator.app/api/mcp"
+        }
+      ]
+    },
+    "_meta": {
+      "io.modelcontextprotocol.registry/official": {
+        "status": "active",
+        "statusChangedAt": "2026-10-19T05:59:23.034475Z",
+        "publishedAt": "2026-10-19T05:59:23.034475Z",
+        "updatedAt": "2026-10-19T05:59:23.034475Z",
+        "isLatest": true
+      }
+    }
+  }
+}
