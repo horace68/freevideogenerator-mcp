@@ -1,5 +1,5 @@
 {
-  "status": "prepared_awaiting_openai_platform_login",
+  "status": "awaiting_openai_developer_identity_verification",
   "sourceArticle": {
     "url": "https://mp.weixin.qq.com/s/UkPeTrkVgOGEeZv8TSWFjA",
     "access": "Read the user-provided Markdown capture and its embedded screenshot."
@@ -8,7 +8,13 @@
     "platform": "OpenAI universal plugin directory for ChatGPT and Codex",
     "formUrl": "https://platform.openai.com/plugins",
     "submittedAt": null,
-    "confirmationId": null
+    "confirmationId": null,
+    "loginConfirmed": true,
+    "packageUploaded": false,
+    "portalDraftCreated": false,
+    "currentGate": "A verified developer identity is required before creating or uploading a plugin.",
+    "verificationPageUrl": "https://platform.openai.com/settings/organization/general",
+    "lastCheckedAt": "2026-10-19T12:33:10.304799+00:00"
   },
   "service": {
     "name": "FreeVideoGenerator",
@@ -261,11 +267,11 @@
       ]
     },
     "individualClientAcceptance": "Not completed for each client; the protocol-level hosted-service acceptance is described separately in docs/clients.md.",
-    "submissionState": "No review form has been submitted. Destination and article-specific requirements are pending."
+    "submissionState": "OpenAI Platform sign-in was confirmed. Upload new or existing plugin opened a mandatory identity-verification gate. No plugin ZIP was uploaded and no review draft was created or submitted."
   },
   "missingInformation": [
-    "Complete sign-in to the OpenAI Platform in the retained browser tab.",
-    "Select the verified publisher identity and owning organization/project in the portal.",
+    "Complete individual or business developer identity verification in the OpenAI Platform; the portal currently blocks plugin creation/upload.",
+    "Select the verified publisher identity and owning organization/project, then upload the prepared plugin ZIP.",
     "Complete the portal domain challenge, OAuth connection and automated scans.",
     "Provide a dedicated reviewer account through the private review form and a real walkthrough recording URL.",
     "Complete the final submission attestations when the full draft is reviewable."
