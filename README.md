@@ -87,13 +87,16 @@ the allowlisted upload ZIP with Python 3.9+:
 python3 scripts/build-plugin.py
 ```
 
-The output is `dist/freevideogenerator-plugin-0.1.0.zip`. It includes five
-positive and three negative review cases. Upload it through
-[OpenAI Plugins](https://platform.openai.com/plugins). A verified publisher,
-domain verification, OAuth connection/tool scans, private reviewer access and a
-real walkthrough recording must be completed before submission. The package is
-prepared; no OpenAI review draft has been created or submitted yet. The current
-[submission record](docs/submissions/review-draft.json) tracks remaining work.
+The output is `dist/freevideogenerator-plugin-0.1.1.zip` in the Codex-compatible
+format accepted by the portal. Use `--format portable` for the Agent Plugins
+format. Both include five positive and three negative review cases.
+Version 0.1.1 is uploaded to an existing [OpenAI Plugins](https://platform.openai.com/plugins)
+draft with verified identity/domain, configured OAuth, passed Skill checks and
+a clean 17-tool MCP scan. It includes a [real walkthrough](https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4).
+Private reviewer credentials and final policy attestations are handled separately.
+See the current [submission record](docs/submissions/review-draft.json) and
+[review evidence and limitations](docs/openai-review.md). A draft, review
+submission, approval and publication are separate states.
 See the [official submission guide](https://developers.openai.com/plugins/deploy/submission).
 
 ```sh
@@ -102,6 +105,6 @@ npm test
 npm pack --dry-run
 ```
 
-Tests cover client formats, isolated Skill installation, overwrite/symlink protection, CLI failures, public diagnostics and Registry metadata. CI targets Linux, macOS and Windows with Node.js 20, 22 and 24; authenticated or paid hosted operations are excluded from CI.
+Tests cover client formats, isolated Skill installation, overwrite/symlink protection, CLI failures, public diagnostics, Registry metadata and the narrow domain-verification Worker. CI targets Linux, macOS and Windows with Node.js 20, 22 and 24; authenticated or paid hosted operations are excluded from CI.
 
 MIT covers this repository's helper, examples and Skill. It does not grant service credits, backend rights or rights to user media. The helper retains the upstream MIT copyright notice.

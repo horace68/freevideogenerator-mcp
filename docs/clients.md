@@ -79,6 +79,12 @@ Instructions were checked against current official documentation on October 19, 
 | Gemini CLI | `httpUrl` + OAuth JSON/CLI | Pending |
 | Kimi Code | HTTP JSON + current TUI flow | Pending |
 | ZCode | Native HTTP JSON + settings flow | Pending |
-| ChatGPT | Account/workspace custom connection guidance | Pending |
+| ChatGPT | Personal custom MCP with CIMD; public-review draft with DCR | Partial: OAuth, account/models/quote, image lookup, batch lookup and media import passed; native creation replay blocked by a security check, one video-detail call failed |
+
+The October 20 ChatGPT walkthrough uses a dedicated synthetic account. Independent
+MCP SDK generation completed one image and two videos for 140 credits; identical
+request retries added no charge. This does not establish a fully passing native
+ChatGPT generation journey. The public draft's DCR authorization and 17-tool scan
+passed separately. See [review evidence](openai-review.md).
 
 The repository's `doctor` checks public discovery/PKCE and the HTTP 401 challenge without credentials. It does not run OAuth, read account data or generate media. Record client version, date, operating system, authentication mode, tool discovery, uploads, billing and downloads when completing a client acceptance test.

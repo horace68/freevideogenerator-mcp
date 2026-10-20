@@ -8,3 +8,7 @@ coverage/
 .mcpregistry_*
 dist/
 .review-private/
+.dev.vars
+.dev.vars.*
+.wrangler/
+cloudflare/openai-verification/worker-configuration.d.ts

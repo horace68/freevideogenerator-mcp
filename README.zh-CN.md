@@ -86,11 +86,15 @@ OAuth 在授权范围内访问所连接账号的数据，范围不是逐个项�
 python3 scripts/build-plugin.py
 ```
 
-输出为 `dist/freevideogenerator-plugin-0.1.0.zip`，已包含 5 个正向、3 个反向
-审核用例。通过 [OpenAI Plugins](https://platform.openai.com/plugins) 上传。
-提交前仍需完成发布身份验证、域名验证、OAuth 连接和工具扫描、私有审核账号及
-实际演示录像。当前已准备插件包，尚未在 OpenAI 后台创建或提交审核草稿。
-[提交记录](docs/submissions/review-draft.json)跟踪剩余事项；流程以
+输出为 `dist/freevideogenerator-plugin-0.1.1.zip`，默认使用后台已接受的 Codex
+兼容格式；`--format portable` 可生成 Agent Plugins 格式。两种格式均包含
+5 个正向、3 个反向审核用例。0.1.1 已上传到现有
+[OpenAI Plugins](https://platform.openai.com/plugins) 草稿，身份与域名已验证，
+OAuth 已配置，Skill 检查通过，17 个 MCP 工具扫描无问题。包中包含
+[实际演示视频](https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4)。
+私有审核凭据和最终政策声明单独处理；最新状态见
+[提交记录](docs/submissions/review-draft.json)和[验证范围与限制](docs/openai-review.md)。
+创建草稿、提交审核、审核通过和公开发布是不同状态。流程以
 [官方提交指南](https://developers.openai.com/plugins/deploy/submission)为准。
 
 ```sh
@@ -99,6 +103,6 @@ npm test
 npm pack --dry-run
 ```
 
-测试覆盖客户端格式、隔离安装、已有目录及符号链接保护、CLI 错误处理、公开诊断和 Registry 元数据。CI 配置覆盖 Linux/macOS/Windows 和 Node.js 20/22/24，不包含认证或付费线上调用。
+测试覆盖客户端格式、隔离安装、已有目录及符号链接保护、CLI 错误处理、公开诊断、Registry 元数据与独立域名验证 Worker。CI 配置覆盖 Linux/macOS/Windows 和 Node.js 20/22/24，不包含认证或付费线上调用。
 
 MIT 许可证适用于本仓库助手、示例与 Skill，不代表服务积分、网站后端或用户素材的使用授权。助手保留上游 MIT 版权声明。

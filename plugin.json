@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "freevideogenerator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate AI images and videos, prepare references, quote credit costs and track tasks through your connected FreeVideoGenerator account.",
   "author": {
     "name": "FreeVideoGenerator",
@@ -19,7 +19,7 @@
         "shortDescription": "Create AI images and videos",
         "longDescription": "Create images and short videos using your existing FreeVideoGenerator account. Discover supported models and Quick Apps, prepare reference media, check your balance and get a quote before submitting a single task or a batch of up to twelve independent tasks. Track progress and retrieve your own generated results. Generation uses existing account credits; quotes do not submit paid work. The plugin does not buy credits, change plans, delete account data, assemble timelines or publish media. Available models, modes and costs are discovered from the service. Temporary media links expire and can be renewed while your connection remains authorized.",
         "developerName": "FreeVideoGenerator",
-        "category": "Productivity",
+        "category": "Creativity",
         "capabilities": [
           "Discover image and video models",
           "Quote generation costs",
@@ -90,11 +90,12 @@
             }
           ]
         },
+        "demo_recording_url": "https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4",
         "commerce": false,
         "commerce_description": "Users access generation through their existing account and credit balance. The plugin does not sell credits, initiate purchases or subscriptions, promote upgrades, or expose checkout tools."
       },
       "publication": {
-        "release_notes": "Initial remote MCP plugin with an image/video creation workflow, explicit cost quotes, stable request IDs, batch tracking and owned reference media.",
+        "release_notes": "Initial remote MCP plugin with cost quotes, stable request IDs, batch tracking and owned reference media. Version 0.1.1 adds the real review walkthrough and Creativity category. Dedicated-account MCP SDK tests completed one image and two videos for 140 credits; identical-UUID retries added no charge. The recording shows live ChatGPT discovery, quote, completed-task lookup, import and negative cases, plus a blocked native creation replay and a failed video-detail call. It does not claim those native attempts passed.",
         "translations": {
           "zh-CN": {
             "subtitle": "生成图片和视频，先报价再创建",
