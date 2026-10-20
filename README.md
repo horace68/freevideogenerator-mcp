@@ -90,15 +90,17 @@ python3 scripts/build-plugin.py
 The output is `dist/freevideogenerator-plugin-0.1.1.zip` in the Codex-compatible
 format accepted by the portal. Use `--format portable` for the Agent Plugins
 format. Both include five positive and three negative review cases.
-Version 0.1.1 is uploaded to an existing [OpenAI Plugins](https://platform.openai.com/plugins)
-draft with verified identity/domain, configured OAuth, passed Skill checks and
-a clean 17-tool MCP scan. It includes a [real walkthrough](https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4).
-Reviewer access entered by the owner, sign-in instructions, all eight cases, the
-walkthrough and release notes are saved. Final policy attestations remain before
-formal submission.
-See the current [submission record](docs/submissions/review-draft.json) and
-[review evidence and limitations](docs/openai-review.md). A draft, review
-submission, approval and publication are separate states.
+Version 0.1.1 was submitted through [OpenAI Plugins](https://platform.openai.com/plugins)
+on October 21, 2026. The portal reports **In review**; publication is
+**Not published**. Identity/domain verification, OAuth, Skill checks and the
+17-tool MCP scan passed. The package includes a
+[real walkthrough](https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4).
+Owner-provided reviewer access, sign-in instructions, all eight cases, the
+walkthrough and release notes were saved. The owner confirmed the six final
+policy attestations before submission. See the
+[submission receipt](docs/submissions/openai-review-0.1.1.json),
+[current status](docs/submissions/review-draft.json) and
+[review evidence and limitations](docs/openai-review.md).
 See the [official submission guide](https://developers.openai.com/plugins/deploy/submission).
 
 ```sh

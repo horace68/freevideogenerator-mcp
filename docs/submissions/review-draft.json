@@ -1,5 +1,5 @@
 {
-  "status": "review_details_saved_awaiting_final_policy_attestations",
+  "status": "in_review",
   "sourceArticle": {
     "url": "https://mp.weixin.qq.com/s/UkPeTrkVgOGEeZv8TSWFjA",
     "access": "Read the user-provided Markdown capture and its embedded screenshot."
@@ -7,21 +7,21 @@
   "submission": {
     "platform": "OpenAI universal plugin directory for ChatGPT and Codex",
     "formUrl": "https://platform.openai.com/plugins",
-    "submittedAt": null,
+    "submittedAt": "2026-10-20T20:13:27.741Z",
     "confirmationId": null,
     "loginConfirmed": true,
     "packageUploaded": true,
     "portalDraftCreated": true,
-    "currentGate": "All review details are saved, including owner-entered credentials and verified five positive/three negative cases. Explicit confirmation of the six final policy attestations remains before Submit.",
+    "currentGate": "Await OpenAI review decision.",
     "verificationPageUrl": "https://platform.openai.com/settings/organization/general",
-    "lastCheckedAt": "2026-10-20T20:11:16.155Z",
+    "lastCheckedAt": "2026-10-20T20:15:23.153Z",
     "developerIdentityVerified": true,
     "pluginId": "plugin_asdk_app_6ad778f27c988191b66b976ba25f7b1f",
     "associatedAppId": "asdk_app_6ad778f27c988191b66b976ba25f7b1f",
     "draftId": "appsub_6ad778f27cc0819182274a8bf68be122",
     "pluginVersion": "0.1.1",
     "portalUrl": "https://platform.openai.com/plugins/manage/plugin_asdk_app_6ad778f27c988191b66b976ba25f7b1f",
-    "reviewStatus": "Not submitted",
+    "reviewStatus": "In review",
     "publicationStatus": "Not published",
     "reviewInformationSaved": true,
     "reviewerCredentialsProvidedBy": "owner",
@@ -30,7 +30,12 @@
     "reviewCaseCounts": {
       "positive": 5,
       "negative": 3
-    }
+    },
+    "submissionConfirmedAt": "2026-10-20T20:15:23.153Z",
+    "submissionTimeSource": "Client-observed successful portal submission; no separate server timestamp or confirmation number was displayed.",
+    "finalPolicyAttestationsConfirmedByOwner": true,
+    "finalPolicyAttestationCount": 6,
+    "formalSubmitActionCount": 1
   },
   "service": {
     "name": "FreeVideoGenerator",
@@ -282,7 +287,7 @@
       ]
     },
     "individualClientAcceptance": "Partial ChatGPT CIMD acceptance: discovery, quote, image and batch lookup, import/media and negative cases passed. Native creation replay was blocked before reaching the service; one video get_job failed. SDK image/video generation and exact-UUID retry acceptance passed separately.",
-    "submissionState": "Version 0.1.1 is accepted in the OpenAI draft. Identity/domain, OAuth, Skill and 17-tool MCP checks passed. Review details were saved and read back: owner-entered credentials preserved, sign-in instructions added, five positive and three negative cases confirmed against the package, walkthrough URL and release notes confirmed. Final policy attestations and formal submission remain.",
+    "submissionState": "Submitted successfully after the owner explicitly confirmed all six policy attestations. The plugin list displayed In review/Pending review; the detail page displayed metadata and skills version 0.1.1 · In review. Publication remains Not published. Review details, owner-entered credentials, five positive/three negative cases, walkthrough and release notes were saved before submission.",
     "sourceBaseCommit": "710f1531a68d45a87eb8af604b1a3d21ae18f841",
     "openaiChecks": {
       "domain": "verified",
@@ -355,11 +360,10 @@
       "headSha": "ba900263704ffe4dca6edf5855e9f1d9a2fadde5",
       "status": "completed",
       "conclusion": "success"
-    }
+    },
+    "submissionReceipt": "docs/submissions/openai-review-0.1.1.json"
   },
-  "missingInformation": [
-    "Confirm the six final policy attestations, then formally submit and read back the review status."
-  ],
+  "missingInformation": [],
   "pluginPackage": {
     "path": "dist/freevideogenerator-plugin-0.1.1.zip",
     "sha256": "7f4bf91129b79f01d183e23e01fd338d2cde5a646da822c1843f18bd2f8a4180",

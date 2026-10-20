@@ -64,9 +64,22 @@ release notes also matched. These fields are read-only in the dashboard because
 they are managed by the ZIP. The incomplete-review-information finding is gone.
 [Public verification record](submissions/review-details-2026-10-21.json).
 
-The draft remains **Not submitted**. The final six policy attestations have not
-been accepted; they require the owner's explicit confirmation. The review form
-contains the private access details, which are not copied into this repository.
+The preparation checkpoint above was captured before formal submission. The
+review form contains the private access details, which are not copied into this
+repository.
+
+## Formal review submission
+
+The owner explicitly confirmed all six final policy attestations on October 21.
+After checking them, **Submit** was clicked once. The portal returned to the
+plugin list with **In review** / **Pending review**. The detail page confirmed
+**Metadata & skills version 0.1.1 · In review**. Publication is **Not published**.
+
+[Formal submission receipt](submissions/openai-review-0.1.1.json) records the
+client-observed attempt and confirmation times in UTC. The list's MCP app version
+`1.0.0` is separate from the uploaded plugin package version `0.1.1`; the hosted
+MCP Registry descriptor remains `1.0.1`. No separate server confirmation number
+was displayed. Review submission does not establish approval or publication.
 
 ## Domain challenge deployment
 

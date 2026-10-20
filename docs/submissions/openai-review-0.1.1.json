@@ -1,0 +1,34 @@
+{
+  "plugin": "FreeVideoGenerator",
+  "pluginId": "plugin_asdk_app_6ad778f27c988191b66b976ba25f7b1f",
+  "associatedAppId": "asdk_app_6ad778f27c988191b66b976ba25f7b1f",
+  "draftId": "appsub_6ad778f27cc0819182274a8bf68be122",
+  "pluginPackageVersion": "0.1.1",
+  "mcpAppVersionShownInList": "1.0.0",
+  "reviewStatus": "In review",
+  "listStatusHelp": "Pending review",
+  "publicationStatus": "Not published",
+  "mcpConfiguration": "Configured",
+  "skillChecks": "Checks passed",
+  "submissionAttemptedAt": "2026-10-20T20:13:27.741Z",
+  "submissionConfirmedAt": "2026-10-20T20:15:23.153Z",
+  "timeSource": "Client-observed successful portal submission; no separate server timestamp or confirmation number was displayed.",
+  "formalSubmitActionCount": 1,
+  "finalAttestations": {
+    "count": 6,
+    "explicitlyConfirmedByOwner": true,
+    "allChecked": true
+  },
+  "reviewDetails": {
+    "saved": true,
+    "positiveCases": 5,
+    "negativeCases": 3,
+    "instructionsReadbackVerified": true,
+    "ownerEnteredCredentialsPreserved": true,
+    "credentialsIncludedInEvidence": false,
+    "walkthroughUrl": "https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4",
+    "releaseNotesMatchedPackage": true
+  },
+  "portalUrl": "https://platform.openai.com/plugins/manage/plugin_asdk_app_6ad778f27c988191b66b976ba25f7b1f",
+  "evidence": "The plugin list showed In review/Pending review. The detail page showed metadata and skills version 0.1.1 · In review."
+}

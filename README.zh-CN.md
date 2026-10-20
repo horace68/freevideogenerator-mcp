@@ -88,15 +88,16 @@ python3 scripts/build-plugin.py
 
 输出为 `dist/freevideogenerator-plugin-0.1.1.zip`，默认使用后台已接受的 Codex
 兼容格式；`--format portable` 可生成 Agent Plugins 格式。两种格式均包含
-5 个正向、3 个反向审核用例。0.1.1 已上传到现有
-[OpenAI Plugins](https://platform.openai.com/plugins) 草稿，身份与域名已验证，
+5 个正向、3 个反向审核用例。0.1.1 已于 2026 年 10 月 21 日通过
+[OpenAI Plugins](https://platform.openai.com/plugins) 正式提交，后台状态为
+**In review（待审核）**，发布状态为 **Not published**。身份与域名已验证，
 OAuth 已配置，Skill 检查通过，17 个 MCP 工具扫描无问题。包中包含
 [实际演示视频](https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4)。
-已保留所有者填写的私有账号，补充登录说明，并确认 5 个正向、3 个反向用例、
-录像与发布说明均已保存。正式提交前剩余最终政策声明确认；最新状态见
-[提交记录](docs/submissions/review-draft.json)和[验证范围与限制](docs/openai-review.md)。
-创建草稿、提交审核、审核通过和公开发布是不同状态。流程以
-[官方提交指南](https://developers.openai.com/plugins/deploy/submission)为准。
+已保留所有者填写的私有账号，补充登录说明，确认 5 个正向、3 个反向用例、
+录像与发布说明保存完整，并在所有者明确确认六项最终声明后提交。
+详见[正式回执](docs/submissions/openai-review-0.1.1.json)、
+[当前状态](docs/submissions/review-draft.json)和[验证范围与限制](docs/openai-review.md)。
+流程以[官方提交指南](https://developers.openai.com/plugins/deploy/submission)为准。
 
 ```sh
 npm run check
