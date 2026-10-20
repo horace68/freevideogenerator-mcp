@@ -1,5 +1,5 @@
 {
-  "status": "awaiting_final_attestations_and_reviewer_credential_authorization",
+  "status": "review_details_saved_awaiting_final_policy_attestations",
   "sourceArticle": {
     "url": "https://mp.weixin.qq.com/s/UkPeTrkVgOGEeZv8TSWFjA",
     "access": "Read the user-provided Markdown capture and its embedded screenshot."
@@ -12,9 +12,9 @@
     "loginConfirmed": true,
     "packageUploaded": true,
     "portalDraftCreated": true,
-    "currentGate": "Explicit authorization to share dedicated test credentials with OpenAI and accept the six final policy attestations. Credentials have not been entered.",
+    "currentGate": "All review details are saved, including owner-entered credentials and verified five positive/three negative cases. Explicit confirmation of the six final policy attestations remains before Submit.",
     "verificationPageUrl": "https://platform.openai.com/settings/organization/general",
-    "lastCheckedAt": "2026-10-20T15:58:22.835807+00:00",
+    "lastCheckedAt": "2026-10-20T20:11:16.155Z",
     "developerIdentityVerified": true,
     "pluginId": "plugin_asdk_app_6ad778f27c988191b66b976ba25f7b1f",
     "associatedAppId": "asdk_app_6ad778f27c988191b66b976ba25f7b1f",
@@ -22,7 +22,15 @@
     "pluginVersion": "0.1.1",
     "portalUrl": "https://platform.openai.com/plugins/manage/plugin_asdk_app_6ad778f27c988191b66b976ba25f7b1f",
     "reviewStatus": "Not submitted",
-    "publicationStatus": "Not published"
+    "publicationStatus": "Not published",
+    "reviewInformationSaved": true,
+    "reviewerCredentialsProvidedBy": "owner",
+    "reviewerCredentialsChangedByAgent": false,
+    "reviewerCredentialsIncludedInRepository": false,
+    "reviewCaseCounts": {
+      "positive": 5,
+      "negative": 3
+    }
   },
   "service": {
     "name": "FreeVideoGenerator",
@@ -274,7 +282,7 @@
       ]
     },
     "individualClientAcceptance": "Partial ChatGPT CIMD acceptance: discovery, quote, image and batch lookup, import/media and negative cases passed. Native creation replay was blocked before reaching the service; one video get_job failed. SDK image/video generation and exact-UUID retry acceptance passed separately.",
-    "submissionState": "Version 0.1.1 accepted into the existing OpenAI draft. Developer identity and domain verified; DCR OAuth authorized; Skill checks passed; latest MCP scan lists 17 tools with no findings. Final submission is pending explicit credential-sharing and legal-attestation authorization.",
+    "submissionState": "Version 0.1.1 is accepted in the OpenAI draft. Identity/domain, OAuth, Skill and 17-tool MCP checks passed. Review details were saved and read back: owner-entered credentials preserved, sign-in instructions added, five positive and three negative cases confirmed against the package, walkthrough URL and release notes confirmed. Final policy attestations and formal submission remain.",
     "sourceBaseCommit": "710f1531a68d45a87eb8af604b1a3d21ae18f841",
     "openaiChecks": {
       "domain": "verified",
@@ -289,9 +297,8 @@
       ]
     },
     "generationReview": {
-      "account": "Dedicated non-admin synthetic demo account; credentials excluded",
+      "account": "Dedicated synthetic account used for recorded acceptance tests. This evidence is not a readback of the current private reviewer credentials.",
       "initialTestCredits": 500,
-      "currentCredits": 360,
       "completedImages": 1,
       "completedVideos": 2,
       "originalCharges": [
@@ -305,7 +312,8 @@
       "nativeChatgptLimitations": [
         "Creation replay blocked by a security check before the MCP audit.",
         "One video get_job returned REQUEST_FAILED; batch lookup and original SDK downloads succeeded."
-      ]
+      ],
+      "creditsAfterAcceptanceCheck": 360
     },
     "walkthrough": {
       "url": "https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4",
@@ -339,10 +347,18 @@
       "endpoint": "https://freevideogenerator.app/.well-known/openai-apps-challenge",
       "tokenInGit": false,
       "mainApplicationRedeployedByThisWork": false
+    },
+    "reviewPackageCommit": "ba900263704ffe4dca6edf5855e9f1d9a2fadde5",
+    "reviewDetailsReceipt": "docs/submissions/review-details-2026-10-21.json",
+    "reviewPreparationCi": {
+      "url": "https://github.com/horace68/freevideogenerator-mcp/actions/runs/39453415467",
+      "headSha": "ba900263704ffe4dca6edf5855e9f1d9a2fadde5",
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "missingInformation": [
-    "Explicit confirmation for transmitting the dedicated demo username/password to OpenAI and accepting the final six policy attestations, then submit and read back the review status."
+    "Confirm the six final policy attestations, then formally submit and read back the review status."
   ],
   "pluginPackage": {
     "path": "dist/freevideogenerator-plugin-0.1.1.zip",

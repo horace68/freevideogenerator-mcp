@@ -92,7 +92,8 @@ python3 scripts/build-plugin.py
 [OpenAI Plugins](https://platform.openai.com/plugins) 草稿，身份与域名已验证，
 OAuth 已配置，Skill 检查通过，17 个 MCP 工具扫描无问题。包中包含
 [实际演示视频](https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4)。
-私有审核凭据和最终政策声明单独处理；最新状态见
+已保留所有者填写的私有账号，补充登录说明，并确认 5 个正向、3 个反向用例、
+录像与发布说明均已保存。正式提交前剩余最终政策声明确认；最新状态见
 [提交记录](docs/submissions/review-draft.json)和[验证范围与限制](docs/openai-review.md)。
 创建草稿、提交审核、审核通过和公开发布是不同状态。流程以
 [官方提交指南](https://developers.openai.com/plugins/deploy/submission)为准。

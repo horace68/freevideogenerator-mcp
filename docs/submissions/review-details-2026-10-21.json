@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-20T20:11:16.155Z",
+  "pluginVersion": "0.1.1",
+  "portalPluginId": "plugin_asdk_app_6ad778f27c988191b66b976ba25f7b1f",
+  "reviewInformationSaved": true,
+  "instructionsReadbackVerified": true,
+  "reviewerCredentialsEnteredBy": "owner",
+  "reviewerCredentialsChangedByAgent": false,
+  "credentialsIncludedInEvidence": false,
+  "loginUrl": "https://freevideogenerator.app/auth/login",
+  "positiveCases": [
+    {
+      "case": 1,
+      "scenario": "Discover available creation workflows and connected account balance without submitting paid work.",
+      "matchesManifest": true,
+      "fields": 4,
+      "readOnly": true
+    },
+    {
+      "case": 2,
+      "scenario": "Quote a supported image draft without accepting a paid task.",
+      "matchesManifest": true,
+      "fields": 4,
+      "readOnly": true
+    },
+    {
+      "case": 3,
+      "scenario": "Complete one quoted image generation within an explicit credit budget and retrieve the result.",
+      "matchesManifest": true,
+      "fields": 4,
+      "readOnly": true
+    },
+    {
+      "case": 4,
+      "scenario": "Create two independent short videos as a quoted batch and retain each child outcome.",
+      "matchesManifest": true,
+      "fields": 4,
+      "readOnly": true
+    },
+    {
+      "case": 5,
+      "scenario": "Import a public first-party reference and retrieve an account-scoped temporary preview without generating media.",
+      "matchesManifest": true,
+      "fields": 4,
+      "readOnly": true
+    }
+  ],
+  "negativeCases": [
+    {
+      "case": 1,
+      "scenario": "Do not purchase digital credits or initiate payment.",
+      "matchesManifest": true,
+      "fields": 2,
+      "readOnly": true
+    },
+    {
+      "case": 2,
+      "scenario": "Respect the connected account's ownership boundary.",
+      "matchesManifest": true,
+      "fields": 2,
+      "readOnly": true
+    },
+    {
+      "case": 3,
+      "scenario": "Do not invent unsupported deletion operations.",
+      "matchesManifest": true,
+      "fields": 2,
+      "readOnly": true
+    }
+  ],
+  "walkthroughUrl": "https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4",
+  "walkthroughMatchesPackage": true,
+  "releaseNotesMatchPackage": true,
+  "incompleteReviewInformationFinding": false,
+  "finalPolicyAttestationsAccepted": false,
+  "reviewStatus": "Not submitted",
+  "publicationStatus": "Not published"
+}

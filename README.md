@@ -93,7 +93,9 @@ format. Both include five positive and three negative review cases.
 Version 0.1.1 is uploaded to an existing [OpenAI Plugins](https://platform.openai.com/plugins)
 draft with verified identity/domain, configured OAuth, passed Skill checks and
 a clean 17-tool MCP scan. It includes a [real walkthrough](https://asset.freevideogenerator.app/mcp/review-2026-10-20-v1/walkthrough.mp4).
-Private reviewer credentials and final policy attestations are handled separately.
+Reviewer access entered by the owner, sign-in instructions, all eight cases, the
+walkthrough and release notes are saved. Final policy attestations remain before
+formal submission.
 See the current [submission record](docs/submissions/review-draft.json) and
 [review evidence and limitations](docs/openai-review.md). A draft, review
 submission, approval and publication are separate states.

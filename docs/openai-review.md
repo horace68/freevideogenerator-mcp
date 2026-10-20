@@ -25,8 +25,9 @@ approval or a promise of acceptance.
 ## Actual acceptance scope
 
 - A dedicated verified, non-admin account contains synthetic review data only.
-  It was provisioned with 500 test credits; the balance after these checks is 360.
-  Its login details belong only in the private reviewer-credentials form.
+  It was provisioned with 500 test credits; the balance after these checks was 360.
+  This describes the recorded acceptance fixture. The current private reviewer
+  credentials are managed separately by the owner and are excluded from evidence.
 - MCP SDK calls quoted exact image/video inputs, completed one `nano-banana-2`
   image for 80 credits and two five-second `seedance-1.0-pro-fast` videos for
   30 credits each. Downloaded files were visually inspected and decoded.
@@ -48,6 +49,24 @@ waiting periods shortened and the limitations retained. Creation completed
 through MCP before the ChatGPT recording. The video contains no credentials or
 raw media capability URLs. Its publication receipt records HTTP 200, `video/mp4`,
 matching 5,007,161 bytes/SHA-256, and HTTP 206 with CORS for OpenAI origins.
+
+## Saved review information
+
+On October 21, the owner entered the private demo login. Its username and password
+were preserved. Tenant and sign-in/OAuth instructions were completed, saved through
+**Save details**, then reopened to verify persistence. The instructions use the
+connected account's actual balance and owned IDs without assuming that it is the
+same account shown in the earlier recording.
+
+Each of the five positive and three negative cases was checked in the portal and
+matched the package; all case tabs were marked complete. The walkthrough URL and
+release notes also matched. These fields are read-only in the dashboard because
+they are managed by the ZIP. The incomplete-review-information finding is gone.
+[Public verification record](submissions/review-details-2026-10-21.json).
+
+The draft remains **Not submitted**. The final six policy attestations have not
+been accepted; they require the owner's explicit confirmation. The review form
+contains the private access details, which are not copied into this repository.
 
 ## Domain challenge deployment
 
